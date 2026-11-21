@@ -1,0 +1,211 @@
+/**
+ * The 23 labelled samples from SEED-SCAMS.md — scorer acceptance fixtures.
+ * Texts are copied verbatim from the seed file. All names/numbers are invented.
+ */
+export interface Sample {
+  id: string;
+  label: "scam" | "genuine";
+  /** Inclusive score band the scorer must land in. */
+  min: number;
+  max: number;
+  text: string;
+  expectDbMatch?: boolean;
+  expectSignals?: string[];
+  forbidSignals?: string[];
+}
+
+export const SAMPLES: Sample[] = [
+  {
+    id: "S1",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectDbMatch: true,
+    expectSignals: ["upfront-fee", "personal-upi", "unrealistic-salary", "messaging-only", "urgency"],
+    text: "💰💰 WORK FROM HOME 💰💰 Amazon Data Entry Job!! Salary ₹45,000/month. No experience needed. Only smartphone required. Registration fee only ₹850 (fully refundable). Pay on UPI: rahul.pay@okhdfc and send screenshot. Join fast, only 3 seats left!! Contact WhatsApp 98120 44517. Forward to your friends groups 🙏",
+  },
+  {
+    id: "S2",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["upfront-fee", "unrealistic-salary", "messaging-only", "no-interview"],
+    text: "Typing work available. 50 pages per day, earn ₹1,800 daily. Material kit charges ₹1,200 before starting, kit will be couriered. DM on Telegram @typingwork_india. No interview, direct joining after kit payment.",
+  },
+  {
+    id: "S3",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["upfront-fee", "documents-upfront", "free-email", "urgency"],
+    text: "Dear Candidate, You are selected for Back Office Executive at Sharma Logistics Pvt Ltd. Salary ₹32,000 per month. To confirm your seat, pay a refundable security deposit of ₹2,500 within 24 hours. Reply to this email (hr.sharmalogistics88@gmail.com) with your Aadhaar copy and bank passbook photo.",
+  },
+  {
+    id: "S4",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["upfront-fee", "personal-upi", "urgency", "unrealistic-salary", "no-presence"],
+    text: "Congratulations! Your resume is shortlisted for HDFC-style Bank Assistant job, salary ₹38,500. Attend training after paying training fee ₹1,499 on number 90041 77230. Call immediately, offer valid today only.",
+  },
+  {
+    id: "S5",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["unrealistic-salary", "messaging-only", "vague-jd"],
+    forbidSignals: ["upfront-fee"],
+    text: "Earn ₹3,000–₹5,000 daily by giving 5-star reviews to products. Work 30 minutes on phone. First task free, then VIP tasks need small recharge to unlock bigger commission. WhatsApp 87654 20918 to start now.",
+  },
+  {
+    id: "S6",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["upfront-fee", "documents-upfront", "messaging-only", "unrealistic-salary", "urgency"],
+    text: "Airport Ground Staff vacancy, 12th pass, salary ₹41,000. Uniform and ID card charges ₹3,200 payable before document verification. Send Aadhaar, PAN and photo on WhatsApp 74589 33120. Joining this week only.",
+  },
+  {
+    id: "S7",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["unrealistic-salary", "messaging-only", "vague-jd", "no-presence"],
+    text: "Simple online task job. Like videos and complete tasks, earn ₹800–₹2,500 per day. Tasks given only on Telegram @dailytask_earn. Bigger tasks after first deposit. 100% genuine, lakhs of members already earning.",
+  },
+  {
+    id: "S8",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["upfront-fee", "personal-upi", "documents-upfront", "unrealistic-salary", "urgency"],
+    text: "Urgent hiring: Data Entry Operator, WFH, ₹28,000/month, fresher welcome. Company laptop will be couriered after laptop security payment ₹4,999 on 96501 28847 (GPay). Share payment screenshot and Aadhaar for dispatch.",
+  },
+  {
+    id: "S9",
+    label: "scam",
+    min: 0,
+    max: 45,
+    expectSignals: ["free-email"],
+    text: "BPO voice process hiring, night shift, salary ₹24,000. Walk-in interview at our office, bring resume. Contact HR: hr.sunrise.bpo@yahoo.com. Candidates must arrange their own headset before joining, headset available at our desk for ₹999.",
+  },
+  {
+    id: "S10",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["unrealistic-salary", "messaging-only", "vague-jd", "no-presence"],
+    forbidSignals: ["upfront-fee"],
+    text: "Form filling job: ₹60 per form, daily 100 forms = ₹6,000/day. Weekly payout. Start today, message \"START\" on WhatsApp 70114 50982. First week target complete karne par bonus. No charges for joining.",
+  },
+  {
+    id: "S11",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["upfront-fee", "messaging-only", "urgency"],
+    text: "Paid internship opportunity for students! Marketing intern, stipend ₹15,000. Certificate + LOR included. Enrolment fee ₹499 only. Limited batch, apply in 2 hours. Telegram @internbatch2026.",
+  },
+  {
+    id: "S12",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["upfront-fee", "no-interview", "unrealistic-salary"],
+    text: "Delivery executive required, earn ₹52,000/month with incentives. Own bike compulsory. Refundable deposit ₹5,000 for delivery bag and uniform. Contact 88990 41276. Joining tomorrow, no interview.",
+  },
+  {
+    id: "S13",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["upfront-fee", "free-email", "no-presence"],
+    text: "Article writers wanted, ₹800 per article, work from home. To check writing quality, first purchase our test package ₹350. After passing, regular work starts. Email: content.desk.hiring@gmail.com.",
+  },
+  {
+    id: "S14",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["upfront-fee", "domain-mismatch", "urgency"],
+    text: "Sarkari vacancy: Clerk posts open, salary ₹44,000. Apply on www.govtjobs-portal-india.com and pay application fee ₹750 by UPI. Last date today. Share with all groups.",
+  },
+  {
+    id: "S15",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["documents-upfront", "no-interview", "messaging-only", "unrealistic-salary"],
+    text: "Female receptionist required for clinic, salary ₹30,000. Send your photo, Aadhaar and 10th marksheet on WhatsApp 93220 68415 for direct selection. No interview, joining from Monday.",
+  },
+  {
+    id: "S16",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["upfront-fee", "unrealistic-salary", "messaging-only"],
+    text: "Ghar baithe packing ka kaam. Material home delivery hoga. Pehle material deposit ₹2,000 jama karein, kaam complete par wapas. Per piece ₹25, monthly ₹35,000 tak kamayein. WhatsApp 84710 29384.",
+  },
+  {
+    id: "S17",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectSignals: ["upfront-fee", "official-email", "specific-jd"],
+    text: "Hiring: Junior Accountant, Pune office. Responsibilities: Tally entries, GST filing support, vendor payments. Requirements: B.Com, 0–1 yr experience, Tally ERP. Salary ₹22,000/month, PF + ESI. Walk-in Mon–Fri, 11am–4pm, Baner office. Selected candidates pay a one-time refundable caution deposit of ₹10,000 before offer letter release. — HR, accounts@brightledgerca.com",
+  },
+  {
+    id: "S18",
+    label: "scam",
+    min: 0,
+    max: 39,
+    expectDbMatch: true,
+    expectSignals: ["db-match"],
+    text: "Part-time online work, flexible hours, students welcome. Daily payouts, simple mobile tasks. For details contact QuickHire Services on WhatsApp 98120 44517.",
+  },
+  {
+    id: "G1",
+    label: "genuine",
+    min: 70,
+    max: 100,
+    expectSignals: ["official-email", "careers-link", "specific-jd"],
+    forbidSignals: ["upfront-fee", "db-match"],
+    text: "We're hiring: Graduate Engineer Trainee (Java), Bengaluru. Responsibilities: build and test REST APIs with the platform team, code reviews, on-call rotation from month 3. Requirements: B.E./B.Tech 2025–26, Java + SQL basics, Git. Salary ₹4.8 LPA, PF, insurance. Apply on our careers page: www.techvista.in/careers or write to careers@techvista.in. Selection: aptitude test → technical interview → HR round.",
+  },
+  {
+    id: "G2",
+    label: "genuine",
+    min: 85,
+    max: 100,
+    expectSignals: ["official-email"],
+    forbidSignals: ["upfront-fee", "db-match", "documents-upfront"],
+    text: "Walk-in drive: Customer Support Associate (Hindi + English), Noida Sec-63 office. Salary ₹18,000–₹21,000/month + PF + ESI, rotational shifts, 6 days/week. Carry resume and original certificates for verification at the interview (no copies retained, no fee at any stage). Queries: hr@sunrisebpo.in. Drive dates: 24–26 Nov, 10am–2pm.",
+  },
+  {
+    id: "G3",
+    label: "genuine",
+    min: 80,
+    max: 100,
+    expectSignals: ["official-email"],
+    forbidSignals: ["upfront-fee", "db-match", "unrealistic-salary"],
+    text: "Delivery Partner — food delivery, Jaipur zone. Earnings ₹22,000–₹28,000/month including delivery incentives, weekly payout. Requirements: two-wheeler, driving licence, smartphone. Joining kit provided free by the company. Apply through the partner app or at the Jaipur hub office, Malviya Nagar. Support: partners@swiftmeals.in.",
+  },
+  {
+    id: "G4",
+    label: "genuine",
+    min: 75,
+    max: 100,
+    expectSignals: ["official-email", "specific-jd"],
+    forbidSignals: ["upfront-fee", "db-match", "unrealistic-salary"],
+    text: "Content Writer (English), remote, 1–3 yrs experience. You'll write product blogs, help-centre articles and release notes for a fintech app. Must share 2 published samples. Salary ₹35,000–₹45,000/month, 5-day week. Apply via the listing on this portal; shortlisted candidates get a paid writing test (₹1,000, paid whether selected or not). Team: hiring@finlytics.co.",
+  },
+  {
+    id: "G5",
+    label: "genuine",
+    min: 75,
+    max: 100,
+    expectSignals: ["specific-jd"],
+    forbidSignals: ["upfront-fee", "db-match"],
+    text: "Required: Billing Assistant for electronics showroom, Lucknow. Timings 10:30am–8:30pm, weekly off Tuesday. Salary ₹14,000/month + Diwali bonus. Experience with billing software preferred; freshers may also apply. Walk in with resume between 12–5pm, or call the store landline 0522-410 2287. Address: Hazratganj main market.",
+  },
+];

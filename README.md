@@ -7,7 +7,7 @@ reasons**, and checks the company/contact against a **crowd-reported scam databa
 Fake recruiters charge lakhs of freshers a “registration fee” or “security deposit” every year.
 JobShield exists to catch the offer *before* the money leaves.
 
-**Live demo:** _(Vercel URL added after first deploy)_
+**Live demo:** https://orbix-jobshield.vercel.app
 
 ## What it does
 
